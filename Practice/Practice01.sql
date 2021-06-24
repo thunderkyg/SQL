@@ -66,7 +66,6 @@ order by Length(department_name) desc;
 select UPPER(country_name) 나라이름
 from countries
 order by country_name asc;
---지사가 있을 것으로 예산되는 나라????
 
 --입사일이 03/12/31 일 이전 입사한 직원의 이름, 월급, 전화 번호, 입사일을 출력하세요 전화번호는 545-343-3433 과 같은 형태로 출력하시오.
 select  first_name 이름,
