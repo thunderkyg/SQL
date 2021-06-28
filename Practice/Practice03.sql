@@ -134,6 +134,6 @@ select  em.employee_id 사번,
         de.department_name 부서명,
         ma.first_name 매니저
 from employees em, employees ma, departments de
-where em.manager_id = ma.employee_id(+)
-and em.department_id = de.department_id
+where em.manager_id = ma.employee_id
+and em.department_id = de.department_id(+)
 order by em.employee_id asc;
