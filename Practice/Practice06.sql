@@ -9,6 +9,25 @@ drop sequence seq_book_id;
 --author sequence 삭제
 drop sequence seq_author_id;
 --------------------------------
+--author table 만들기
+create table author(
+    author_id number(5),
+    author_name varchar2(30) not null,
+    author_desc varchar2(50),
+    primary key (author_id)
+    );
+--author 관련 sequence 만들기
+create sequence seq_author_id
+increment by 1
+start with 1;
+--author table 데이터 저장-6개
+insert into author values (seq_author_id.nextval, '이문열', '경북 영양');
+insert into author values (seq_author_id.nextval, '박경리', '경상남도 통영');
+insert into author values (seq_author_id.nextval, '유시민', '17대 국회의원');
+insert into author values (seq_author_id.nextval, '기안84', '기안동에서 산 84년생');
+insert into author values (seq_author_id.nextval, '강풀', '온라인 만화가 1세대');
+insert into author values (seq_author_id.nextval, '김영하', '알쓸신잡');
+--
 --book table 만들기
 create table book (
     book_id number(5),
@@ -34,25 +53,7 @@ insert into book values (seq_book_id.nextval, '순정만화', '재미주의', '2
 insert into book values (seq_book_id.nextval, '오직두사람', '문학동네', '2017-05-04', 6);
 insert into book values (seq_book_id.nextval, '26년', '재미주의', '2012-02-04', 5);
 --
---author table 만들기
-create table author(
-    author_id number(5),
-    author_name varchar2(30) not null,
-    author_desc varchar2(50),
-    primary key (author_id)
-    );
---author 관련 sequence 만들기
-create sequence seq_author_id
-increment by 1
-start with 1;
---author table 데이터 저장-6개
-insert into author values (seq_author_id.nextval, '이문열', '경북 영양');
-insert into author values (seq_author_id.nextval, '박경리', '경상남도 통영');
-insert into author values (seq_author_id.nextval, '유시민', '17대 국회의원');
-insert into author values (seq_author_id.nextval, '기안84', '기안동에서 산 84년생');
-insert into author values (seq_author_id.nextval, '강풀', '온라인 만화가 1세대');
-insert into author values (seq_author_id.nextval, '김영하', '알쓸신잡');
---
+
 --select 문(조인)
 select *
 from book bo, author au
